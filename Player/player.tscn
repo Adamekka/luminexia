@@ -2,5 +2,5 @@
 
 [node name="Player" type="CharacterBody2D"]
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="Triangle" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(-20, 30, 20, 30, 0, -30)
