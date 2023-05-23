@@ -1,9 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbnjinoaw42dp"]
+[gd_scene load_steps=3 format=3 uid="uid://dbnjinoaw42dp"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_pwcjf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36otl"]
 size = Vector2(20, 60)
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_pwcjf")
 
 [node name="Triangle" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(-20, 30, 20, 30, 0, -30)
