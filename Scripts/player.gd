@@ -1,32 +1,29 @@
 extends CharacterBody2D
 
-enum Direction { UP, DOWN, LEFT, RIGHT, NONE }
+enum Rotation { LEFT, RIGHT, NONE }
 
 
-## Get the direction of the input vector
-func get_direction() -> Direction:
-	var input_vector: Vector2 = Vector2(
-		Input.get_action_strength("right") - Input.get_action_strength("left"),
-		Input.get_action_strength("down") - Input.get_action_strength("up")
-	)
-
-	match input_vector:
-		Vector2(0, 0):
-			return Direction.NONE
-		Vector2(1, 0):
-			return Direction.RIGHT
-		Vector2(-1, 0):
-			return Direction.LEFT
-		Vector2(0, 1):
-			return Direction.DOWN
-		Vector2(0, -1):
-			return Direction.UP
-		_:
-			return Direction.NONE
+## Get rotation direction from the input
+func get_rotation_direction() -> Rotation:
+	if Input.get_action_strength("right") == 1:
+		return Rotation.RIGHT
+	elif Input.get_action_strength("left") == 1:
+		return Rotation.LEFT
+	else:
+		return Rotation.NONE
 
 
-func _physics_process(_delta: float):
-	var direction: Direction = get_direction()
-	print(direction)
+func _physics_process(delta: float):
+	var player_rotation: float = 0.1
 
-	pass
+	var rotation_direction: Rotation = get_rotation_direction()
+	match rotation_direction:
+		Rotation.LEFT:
+			player_rotation = -1
+		Rotation.RIGHT:
+			player_rotation = 1
+		Rotation.NONE:
+			player_rotation = 0
+
+	# Rotate the player
+	rotate(player_rotation * delta)
