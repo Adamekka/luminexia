@@ -5,6 +5,8 @@ enum Rotation { LEFT, RIGHT, NONE }
 
 ## Get rotation direction from the input
 func get_rotation_direction() -> Rotation:
+	if Input.get_action_strength("right") == 1 and Input.get_action_strength("left") == 1:
+		return Rotation.NONE
 	if Input.get_action_strength("right") == 1:
 		return Rotation.RIGHT
 	elif Input.get_action_strength("left") == 1:
