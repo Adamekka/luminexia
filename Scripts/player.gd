@@ -14,7 +14,7 @@ func get_rotation_direction() -> Rotation:
 
 
 func _physics_process(delta: float):
-	var player_rotation: float = 0.1
+	var player_rotation: float = 0
 
 	var rotation_direction: Rotation = get_rotation_direction()
 	match rotation_direction:
