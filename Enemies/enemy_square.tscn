@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk57xccuansws"]
+
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_737ns"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c66ql"]
+
+[node name="EnemySquare" type="CharacterBody2D"]
+script = ExtResource("1_737ns")
+
+[node name="Square" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_c66ql")
