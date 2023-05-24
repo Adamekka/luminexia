@@ -1,24 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdbo3w40qtfuq"]
+[gd_scene load_steps=3 format=3 uid="uid://cdbo3w40qtfuq"]
 
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_g1vxn"]
 [ext_resource type="PackedScene" uid="uid://dbnjinoaw42dp" path="res://Player/player.tscn" id="1_mulch"]
-[ext_resource type="PackedScene" uid="uid://dk57xccuansws" path="res://Enemies/enemy_square.tscn" id="2_uwrhj"]
-
-[sub_resource type="Curve2D" id="Curve2D_iultf"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0)
-}
-point_count = 1
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_g1vxn")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
 
 [node name="Player" parent="." instance=ExtResource("1_mulch")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
-[node name="EnemySpawnPath" type="Path2D" parent="Player"]
-curve = SubResource("Curve2D_iultf")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Player/EnemySpawnPath"]
-
-[node name="EnemySquare" parent="." instance=ExtResource("2_uwrhj")]
-position = Vector2(183, -57)
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
