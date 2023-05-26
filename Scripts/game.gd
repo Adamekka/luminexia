@@ -1,11 +1,11 @@
 extends Node2D
 
-const enemy_scene = preload("res://Entities/Enemies/enemy_square.tscn")
+const enemy_scene := preload("res://Entities/Enemies/enemy_square.tscn")
 
 
-func _on_timer_timeout():
+func _on_enemy_timer_timeout():
 	# Spawn enemy
-	var enemy = enemy_scene.instantiate()
+	var enemy := enemy_scene.instantiate()
 
 	# Get random direction 0-3
 	var dir: int = randi() % 4

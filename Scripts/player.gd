@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 enum Rotation { LEFT, RIGHT, NONE }
 
-const bullet = preload("res://Entities/Misc/bullet.tscn")
+const bullet := preload("res://Entities/Misc/bullet.tscn")
 
 
 ## Get rotation direction from the input
@@ -38,7 +38,7 @@ func _physics_process(delta: float):
 func _process(_delta: float):
 	# Shoot
 	if Input.is_action_just_pressed("shoot"):
-		var bullet_instance = bullet.instantiate()
+		var bullet_instance := bullet.instantiate()
 		bullet_instance.rotation = rotation
 		# Spawn the bullet in front of the player
 		bullet_instance.position = Vector2(30 * sin(rotation), 30 * -cos(rotation))
