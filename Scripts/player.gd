@@ -2,9 +2,7 @@ extends CharacterBody2D
 
 enum Rotation { LEFT, RIGHT, NONE }
 
-var bullet = preload("res://Entities/Misc/bullet.tscn")
-## Division is slow
-const pi_2 = PI / 2
+const bullet = preload("res://Entities/Misc/bullet.tscn")
 
 
 ## Get rotation direction from the input
@@ -33,6 +31,8 @@ func _physics_process(delta: float):
 
 	# Rotate the player
 	rotate(player_rotation * delta)
+
+	pass
 
 
 func _process(_delta: float):
