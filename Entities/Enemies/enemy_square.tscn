@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dk57xccuansws"]
+[gd_scene load_steps=3 format=3 uid="uid://cwsbskakssglb"]
 
-[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_itvxt"]
+[ext_resource type="Script" path="res://Scripts/enemy_square.gd" id="1_mrnbq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c66ql"]
 
 [node name="EnemySquare" type="Area2D"]
-script = ExtResource("1_itvxt")
+script = ExtResource("1_mrnbq")
 
 [node name="Square" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
