@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Area2D
 
 ## Bullet speed
 @export var speed: int = 200

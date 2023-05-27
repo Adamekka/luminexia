@@ -5,11 +5,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ihl7e"]
 size = Vector2(4, 8)
 
-[node name="Bullet" type="CharacterBody2D"]
+[node name="Bullet" type="Area2D"]
 script = ExtResource("1_8auws")
 
 [node name="Shape" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(-2, 4, 2, 4, 2, -4, -2, -4)
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ihl7e")
