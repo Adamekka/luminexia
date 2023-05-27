@@ -11,5 +11,5 @@ script = ExtResource("1_n8k82")
 [node name="Triangle" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(-20, 30, 20, 30, 0, -30)
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_36otl")
